@@ -2,8 +2,10 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image, ImageDraw
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from ultralytics import YOLO
+import tensorflow as tf
+preprocess_input = tf.keras.applications.mobilenet_v2.preprocess_input
+
 
 # 1. Cấu hình giao diện
 st.set_page_config(page_title="Hệ thống Nhận diện Đa Vật Thể", layout="wide")
@@ -32,7 +34,7 @@ with col1:
         original_image = Image.open(uploaded_file).convert('RGB')
         st.image(original_image, caption='Ảnh gốc đầu vào', use_container_width=True)
         
-        if st.button("Phân tích & Khoanh vùng ngay!"):
+        if st.button("Phân tích hình ảnh !"):
             results = detector(original_image, verbose=False)[0]
             boxes = results.boxes
             
