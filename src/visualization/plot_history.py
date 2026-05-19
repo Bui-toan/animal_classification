@@ -13,7 +13,6 @@ def plot_history(file_path='models_saved/train_history.pkl'):
 
     plt.figure(figsize=(12, 5))
 
-    # Biểu đồ Accuracy
     plt.subplot(1, 2, 1)
     plt.plot(epochs, acc, 'b-o', label='Training Acc')
     plt.plot(epochs, val_acc, 'r-o', label='Validation Acc')
@@ -23,7 +22,6 @@ def plot_history(file_path='models_saved/train_history.pkl'):
     plt.legend()
     plt.grid(True)
 
-    # Biểu đồ Loss
     plt.subplot(1, 2, 2)
     plt.plot(epochs, loss, 'b-o', label='Training Loss')
     plt.plot(epochs, val_loss, 'r-o', label='Validation Loss')
@@ -34,7 +32,7 @@ def plot_history(file_path='models_saved/train_history.pkl'):
     plt.grid(True)
 
     plt.tight_layout()
-    plt.savefig('models_saved/training_report.png') # Lưu ảnh vào thư mục
+    plt.savefig('models_saved/training_report.png')
     plt.show()
 
 if __name__ == "__main__":
